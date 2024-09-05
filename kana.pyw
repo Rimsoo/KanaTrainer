@@ -1,5 +1,17 @@
+import os
+import sys
 import tkinter as tk
 import random
+
+def resource_path(relative_path):
+    """Obtenir le chemin absolu du fichier de ressources (dict.txt)"""
+    try:
+        # Pour les exécutables générés par PyInstaller
+        base_path = sys._MEIPASS
+    except AttributeError:
+        # Pour le développement local
+        base_path = os.path.dirname(__file__)
+    return os.path.join(base_path, relative_path)
 
 # Fonction pour charger le dictionnaire à partir d'un fichier externe
 def load_kana_dict(file_path):
@@ -18,7 +30,7 @@ def load_kana_dict(file_path):
 class KanaApp:
     def __init__(self, root, kana_dict, romaji_dict):
         self.root = root
-        self.root.title("Kana Practice")
+        self.root.title("Kana Trainer")
         self.root.attributes("-fullscreen", True)  # Mode plein écran
 
         self.display_label = tk.Label(root, font=("Arial", 100))
@@ -56,10 +68,6 @@ class KanaApp:
         self.answer_label['text'] = ''
         self.answer_shown = False
 
-        # Mise à jour du compteur d'essais
-        self.total_attempts += 1
-        self.update_counter()
-
     def get_random_character(self):
         # Si des caractères incorrects existent, donner la priorité pour la révision
         if self.incorrect_kana and random.random() < 0.5:
@@ -82,6 +90,9 @@ class KanaApp:
         # Marque comme correct par défaut (espace)
         if not self.answer_shown:
             self.toggle_display()
+            # Mise à jour du compteur d'essais
+            self.total_attempts += 1
+            self.update_counter()
         else:
             self.mark_correct()
 
@@ -107,7 +118,7 @@ class KanaApp:
             self.answer_shown = True
 
     def update_counter(self):
-        self.counter_label['text'] = f"Total d'essais : {self.total_attempts}"
+        self.counter_label['text'] = f"Total attempts : {self.total_attempts}"
 
     def update_score(self):
         self.score_label['text'] = f"Score : {self.correct_answers} / {self.total_attempts}"
@@ -117,6 +128,7 @@ class KanaApp:
 
 if __name__ == "__main__":
     root = tk.Tk()
-    kana_dict, romaji_dict = load_kana_dict("dict.txt")  # Charger le dictionnaire externe
+    dict_file = resource_path("dict.txt")  # Charger le dictionnaire externe depuis le package
+    kana_dict, romaji_dict = load_kana_dict(dict_file)
     app = KanaApp(root, kana_dict, romaji_dict)
     root.mainloop()

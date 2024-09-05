@@ -45,6 +45,41 @@ wa:わ:ワ
 wo:を:ヲ
 n:ん:ン
 
+# Combinations 
+kya: キャ: きゃ
+kyu: キュ: きゅ
+kyo: キョ: きょ
+gya: ぎゃ: ギャ
+gyu: ぎゅ: ギュ
+gyo: ぎょ: ギョ
+sha: シャ: しゃ
+shu: シュ: しゅ
+sho: ショ: しょ
+ja: じゃ: ジャ
+ju: じゅ: ジュ
+jo: じょ: ジョ
+cha: チャ: ちゃ
+chu: チュ: ちゅ
+cho: チョ: ちょ
+nya: ニャ: にゃ
+nyu: ニュ: にゅ
+nyo: ニョ: にょ
+hya: ヒャ: ひゃ
+hyu: ヒュ: ひゅ
+hyo: ヒョ: ひょ
+bya: びゃ: ビャ
+byu: びゅ: ビュ
+byo: びょ: ビョ
+pya: ぴゃ: ピャ
+pyu: ぴゅ: ピュ
+pyo: ぴょ: ピョ
+mya: ミャ: みゃ
+myu: ミュ: みゅ
+myo: ミョ: みょ
+rya: リャ: りゃ
+ryu: リュ: りゅ
+ryo: リョ: りょ
+
 # Combinaisons avec "p" (pa, pi, pu, pe, po)
 pa:ぱ:パ
 pi:ぴ:ピ

@@ -1,0 +1,60 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.pyo
+*.pyd
+*.db
+
+# Environnements virtuels
+venv/
+env/
+ENV/
+.venv/
+
+# PyInstaller
+*.spec
+dist/
+build/
+__pycache__/
+*.log
+
+# Editor/IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Fichiers de configuration de Python
+*.egg-info/
+*.eggs/
+*.nib/
+*.pyc
+
+# Fichiers temporaires
+*.tmp
+*.temp
+
+# Ignorer les fichiers de documentation générés
+*.pdf
+*.html
+*.chm
+*.mobi
+
+# Autres fichiers générés
+*.coverage
+*.coverage.*
+nosetests.xml
+coverage.xml
+*.tox
+*.nox
+*.coverage
+*.hypothesis/
+.pytest_cache/
